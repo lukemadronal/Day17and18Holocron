@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CharacterViewController.h
 //  iForce
 //
 //  Created by Luke Madronal on 10/15/15.
@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachability.h"
 
-@interface ViewController : UIViewController <UISearchBarDelegate>
+@interface CharacterViewController : UIViewController
 
+@property (nonatomic,strong) NSArray *currentCharacterArray;
 
 @end
-

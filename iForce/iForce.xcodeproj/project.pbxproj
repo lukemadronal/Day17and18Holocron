@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010DBEE21BD131CD0031B81C /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DBEE11BD131CD0031B81C /* SearchResultsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		012D3C071BD00CC1002643A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C061BD00CC1002643A7 /* main.m */; };
 		012D3C0A1BD00CC1002643A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C091BD00CC1002643A7 /* AppDelegate.m */; };
 		012D3C0D1BD00CC1002643A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C0C1BD00CC1002643A7 /* ViewController.m */; };
 		012D3C101BD00CC1002643A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012D3C0E1BD00CC1002643A7 /* Main.storyboard */; };
 		012D3C121BD00CC1002643A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012D3C111BD00CC1002643A7 /* Assets.xcassets */; };
 		012D3C151BD00CC1002643A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012D3C131BD00CC1002643A7 /* LaunchScreen.storyboard */; };
+		012D3C1E1BD00D4E002643A7 /* Characters.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C1D1BD00D4E002643A7 /* Characters.m */; settings = {ASSET_TAGS = (); }; };
+		012D3C211BD02C09002643A7 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C201BD02C09002643A7 /* CharacterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		012D3C241BD02FFD002643A7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C231BD02FFD002643A7 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010DBEE01BD131CD0031B81C /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		010DBEE11BD131CD0031B81C /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		012D3C021BD00CC1002643A7 /* iForce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iForce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012D3C061BD00CC1002643A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		012D3C081BD00CC1002643A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +32,12 @@
 		012D3C111BD00CC1002643A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012D3C141BD00CC1002643A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		012D3C161BD00CC1002643A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		012D3C1C1BD00D4E002643A7 /* Characters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Characters.h; sourceTree = "<group>"; };
+		012D3C1D1BD00D4E002643A7 /* Characters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Characters.m; sourceTree = "<group>"; };
+		012D3C1F1BD02C09002643A7 /* CharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterViewController.h; sourceTree = "<group>"; };
+		012D3C201BD02C09002643A7 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
+		012D3C221BD02FFD002643A7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../Day11and12-TuneSearch/iTune/iTune/Reachability.h"; sourceTree = "<group>"; };
+		012D3C231BD02FFD002643A7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../Day11and12-TuneSearch/iTune/iTune/Reachability.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +70,19 @@
 		012D3C041BD00CC1002643A7 /* iForce */ = {
 			isa = PBXGroup;
 			children = (
+				012D3C0E1BD00CC1002643A7 /* Main.storyboard */,
+				012D3C221BD02FFD002643A7 /* Reachability.h */,
+				012D3C231BD02FFD002643A7 /* Reachability.m */,
 				012D3C081BD00CC1002643A7 /* AppDelegate.h */,
 				012D3C091BD00CC1002643A7 /* AppDelegate.m */,
+				012D3C1F1BD02C09002643A7 /* CharacterViewController.h */,
+				012D3C201BD02C09002643A7 /* CharacterViewController.m */,
+				010DBEE01BD131CD0031B81C /* SearchResultsViewController.h */,
+				010DBEE11BD131CD0031B81C /* SearchResultsViewController.m */,
 				012D3C0B1BD00CC1002643A7 /* ViewController.h */,
 				012D3C0C1BD00CC1002643A7 /* ViewController.m */,
-				012D3C0E1BD00CC1002643A7 /* Main.storyboard */,
+				012D3C1C1BD00D4E002643A7 /* Characters.h */,
+				012D3C1D1BD00D4E002643A7 /* Characters.m */,
 				012D3C111BD00CC1002643A7 /* Assets.xcassets */,
 				012D3C131BD00CC1002643A7 /* LaunchScreen.storyboard */,
 				012D3C161BD00CC1002643A7 /* Info.plist */,
@@ -151,8 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				012D3C0D1BD00CC1002643A7 /* ViewController.m in Sources */,
+				012D3C211BD02C09002643A7 /* CharacterViewController.m in Sources */,
+				010DBEE21BD131CD0031B81C /* SearchResultsViewController.m in Sources */,
 				012D3C0A1BD00CC1002643A7 /* AppDelegate.m in Sources */,
 				012D3C071BD00CC1002643A7 /* main.m in Sources */,
+				012D3C241BD02FFD002643A7 /* Reachability.m in Sources */,
+				012D3C1E1BD00D4E002643A7 /* Characters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +325,7 @@
 				012D3C1B1BD00CC1002643A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
