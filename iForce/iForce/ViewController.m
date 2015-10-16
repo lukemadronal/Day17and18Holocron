@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CharacterViewController.h"
+#import "SearchResultsViewController.h"
 
 @interface ViewController ()
 
@@ -97,7 +98,7 @@ bool serverAvailable;
         NSLog(@"server not available");
         //      NSURL *fileUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/classfiles/iOS_URL_Class_Get_File.txt",_hostName]];
         //        NSURL *fileUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/classfiles/flavors.json",_hostName]];
-        NSString *searchName = _characterSearchBar.text;
+        //NSString *searchName = _characterSearchBar.text;
         _currentURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://f5f99962.ngrok.io/character/Spock"]];
         _currentURLString = [NSString stringWithFormat:@"https://f5f99962.ngrok.io/character/Spock"];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -116,7 +117,13 @@ bool serverAvailable;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //MAIN THREAD CODE GOES HERE
                     NSLog(@"size is: %li",_trackMutableArray.count);
-                    [self performSegueWithIdentifier:@"searchToCharacterSegue" sender:self];
+                    if (_trackMutableArray.count > 1) {
+                        [self performSegueWithIdentifier:@"searchToSearchResultsSegue" sender:self];
+                    } else if (_trackMutableArray.count==1) {
+                        [self performSegueWithIdentifier:@"searchToCharacterSegue" sender:self];
+                    } else {
+                        //throw error message
+                    }
                 });
             } else {
                 NSLog(@"DONT Got Data");
@@ -126,6 +133,34 @@ bool serverAvailable;
         NSLog(@"server not available");
     }
     //seque to controller
+}
+
+-(void)getImageFromServer:(NSString *)localFileName fromUrl:(NSString *)fullFileName {
+    if(serverAvailable) {
+        NSURL *fileURL = [NSURL URLWithString:fullFileName];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+        [request setURL:fileURL];
+        [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+        [request setTimeoutInterval:30.0];
+        NSURLSession *session = [NSURLSession sharedSession];
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if ([data length] > 0 && error==nil) {
+                NSString *savedFilePath = [[self getDocumentsDirectory] stringByAppendingPathComponent:localFileName];
+                UIImage *imageTemp = [UIImage imageWithData:data];
+                if (imageTemp != nil) {
+                    [data writeToFile:savedFilePath atomically:true];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //main thread goes here
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"gotImageNotification" object:nil];
+                    });
+                }
+            } else {
+                NSLog(@"no data");
+            }
+        }]resume];
+    } else {
+        NSLog(@"server not available");
+    }
 }
 
 #pragma mark - animation methods
@@ -155,8 +190,6 @@ bool serverAvailable;
 #pragma mark - Life Cycle Methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CharacterViewController *charController = [segue destinationViewController];
-    
     /*
      if (array.count > 1 ) {
         do the loop below and segue to table view of search results
@@ -174,19 +207,13 @@ bool serverAvailable;
      */
     
     //many results->tableView
-    if (_trackMutableArray.count > 1) {
-        if ([[segue identifier] isEqualToString:@"searchToCharacterSegue"]) {
-            charController.currentCharacterArray = _trackMutableArray;
-        }
-    } else {
-        //one result->character page
-        if (_trackMutableArray.count==1) {
-            if ([[segue identifier] isEqualToString:@"searchToSearchResultsSegue"]) {
-                charController.currentCharacterArray = _trackMutableArray;
-            }
-        } else {
-            //throw error message
-        }
+    if ([[segue identifier] isEqualToString:@"searchToSearchResultsSegue"]) {
+        SearchResultsViewController *searchController = [segue destinationViewController];
+        searchController.currentCharacterArray = _trackMutableArray;
+    } else if ([[segue identifier] isEqualToString:@"searchToCharacterSegue"]) {
+        CharacterViewController *charController = [segue destinationViewController];
+        charController.currentCharacter = _trackMutableArray[0];
+        NSLog(@"Sending %@",[charController.currentCharacter objectForKey:@"name"]);
     }
     
 }

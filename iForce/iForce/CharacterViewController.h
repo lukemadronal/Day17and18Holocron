@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Characters.h"
 
 @interface CharacterViewController : UIViewController
 
-@property (nonatomic,strong) NSArray *currentCharacterArray;
+@property (nonatomic,strong) NSDictionary *currentCharacter;
+@property (nonatomic,strong) NSString     *currentImageFilePath;
 
 @end

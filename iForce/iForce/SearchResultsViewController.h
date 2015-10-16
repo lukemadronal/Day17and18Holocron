@@ -10,4 +10,7 @@
 
 @interface SearchResultsViewController : UIViewController
 
+@property (nonatomic,strong) NSMutableArray *currentCharacterArray;
+@property (nonatomic,strong) NSString       *currentImageFilePath;
+
 @end

@@ -16,7 +16,8 @@
 @property (nonatomic,strong) NSString *species;
 @property (nonatomic,strong) NSString *homeworld;
 @property (nonatomic,strong) NSString *gender;
-@property (nonatomic,strong) NSArray *faction;
+@property (nonatomic,strong) NSArray  *faction;
+@property (nonatomic,strong) NSString *imageFilePath;
 
 
 

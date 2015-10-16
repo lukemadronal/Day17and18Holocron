@@ -14,6 +14,51 @@
 
 @implementation AppDelegate
 
+//bool serverAvailable;
+
+-(NSString *) getDocumentsDirectory {
+    NSArray *paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
+    //NSLog(@"DocPath:%@",paths[0]);
+    return paths[0];
+}
+
+-(BOOL)fileIsLocal:(NSString *)fileName {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filePath = [[self getDocumentsDirectory] stringByAppendingPathComponent:fileName];
+    return [fileManager fileExistsAtPath:filePath];
+}
+
+
+-(void)getImageFromServer:(NSString *)localFileName fromUrl:(NSString *)fullFileName atIndexPath:(NSIndexPath *)indexPath checkTableView:(BOOL *)check withTableView:(UITableView *)tableView {
+    NSURL *fileURL = [NSURL URLWithString:fullFileName];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:fileURL];
+    [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    [request setTimeoutInterval:30.0];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSLog(@"LF:%@ FF:%@",localFileName,fullFileName);
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"Length:%li error:%@",[data length],error);
+        if ([data length] > 0 && error==nil) {
+            NSString *savedFilePath = [[self getDocumentsDirectory] stringByAppendingPathComponent:localFileName];
+            UIImage *imageTemp = [UIImage imageWithData:data];
+            if (imageTemp != nil) {
+                NSLog(@"iamge is not null");
+                [data writeToFile:savedFilePath atomically:true];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"gotImageNotification" object:nil];
+                    if (check) {
+                        NSLog(@": )  : )  : )  : )");
+                        // NSNotification goes here
+                    }
+                });
+            }
+        } else {
+            NSLog(@"no data");
+        }
+    }]resume];
+}
+
 - (void)setupAppearances {
     [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor clearColor]];
     [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTextColor:[UIColor whiteColor]];

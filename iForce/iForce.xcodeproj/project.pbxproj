@@ -17,6 +17,7 @@
 		012D3C1E1BD00D4E002643A7 /* Characters.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C1D1BD00D4E002643A7 /* Characters.m */; settings = {ASSET_TAGS = (); }; };
 		012D3C211BD02C09002643A7 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C201BD02C09002643A7 /* CharacterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		012D3C241BD02FFD002643A7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D3C231BD02FFD002643A7 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
+		016CDC6A1BD178640064787C /* TriviaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CDC691BD178640064787C /* TriviaViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		012D3C201BD02C09002643A7 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
 		012D3C221BD02FFD002643A7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../Day11and12-TuneSearch/iTune/iTune/Reachability.h"; sourceTree = "<group>"; };
 		012D3C231BD02FFD002643A7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../Day11and12-TuneSearch/iTune/iTune/Reachability.m"; sourceTree = "<group>"; };
+		016CDC681BD178640064787C /* TriviaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriviaViewController.h; sourceTree = "<group>"; };
+		016CDC691BD178640064787C /* TriviaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriviaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				012D3C0E1BD00CC1002643A7 /* Main.storyboard */,
+				016CDC681BD178640064787C /* TriviaViewController.h */,
+				016CDC691BD178640064787C /* TriviaViewController.m */,
 				012D3C221BD02FFD002643A7 /* Reachability.h */,
 				012D3C231BD02FFD002643A7 /* Reachability.m */,
 				012D3C081BD00CC1002643A7 /* AppDelegate.h */,
@@ -177,6 +182,7 @@
 				012D3C071BD00CC1002643A7 /* main.m in Sources */,
 				012D3C241BD02FFD002643A7 /* Reachability.m in Sources */,
 				012D3C1E1BD00D4E002643A7 /* Characters.m in Sources */,
+				016CDC6A1BD178640064787C /* TriviaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

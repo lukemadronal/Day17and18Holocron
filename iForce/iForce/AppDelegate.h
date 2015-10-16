@@ -12,6 +12,12 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void)getImageFromServer:(NSString *)localFileName fromUrl:(NSString *)fullFileName atIndexPath:(NSIndexPath *)indexPath checkTableView:(BOOL *)check withTableView:(UITableView *)tableView;
+
+-(BOOL)fileIsLocal:(NSString *)fileName;
+
+-(NSString *) getDocumentsDirectory;
+
 
 @end
 

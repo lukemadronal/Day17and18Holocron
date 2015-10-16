@@ -34,6 +34,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iYe-hb-Emp"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-DI-xzI">
+                                <rect key="frame" x="5" y="191" width="43" height="30"/>
+                                <state key="normal" title="Trivia"/>
+                                <connections>
+                                    <segue destination="cwc-C8-Zwu" kind="show" id="bgy-Wi-q5o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,7 +71,48 @@
             </objects>
             <point key="canvasLocation" x="698" y="-387"/>
         </scene>
-        <!--Character View Controller-->
+        <!--Trivia View Controller-->
+        <scene sceneID="BDj-Um-tEo">
+            <objects>
+                <viewController id="cwc-C8-Zwu" customClass="TriviaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NjR-ra-eqs"/>
+                        <viewControllerLayoutGuide type="bottom" id="YLt-B3-vOk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ie-3o-ioD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your answer here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-xg-8ej">
+                                <rect key="frame" x="20" y="202" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Trivia question goes here?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-Wc-L32">
+                                <rect key="frame" x="20" y="72" width="240" height="128"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm0-nh-hNF">
+                                <rect key="frame" x="20" y="230" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerTextField" destination="Moh-xg-8ej" id="H2X-OO-yFu"/>
+                        <outlet property="questionTextView" destination="t8K-Wc-L32" id="PbH-fh-tNt"/>
+                        <outlet property="scoreLabel" destination="Pm0-nh-hNF" id="hEm-zE-yr9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcQ-jh-W5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="315"/>
+        </scene>
+        <!--Detail-->
         <scene sceneID="0J5-Ev-7eD">
             <objects>
                 <viewController id="cmF-uL-ERy" customClass="CharacterViewController" sceneMemberID="viewController">
@@ -77,31 +125,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3p-YD-s3N">
-                                <rect key="frame" x="17" y="72" width="45" height="21"/>
+                                <rect key="frame" x="17" y="72" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homeworld" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-U5-IqD">
-                                <rect key="frame" x="17" y="101" width="88" height="21"/>
+                                <rect key="frame" x="17" y="101" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgN-hw-AGp">
-                                <rect key="frame" x="17" y="130" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcb-nE-lId">
-                                <rect key="frame" x="20" y="159" width="57" height="21"/>
+                                <rect key="frame" x="17" y="130" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prelude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4m-4o-hyU">
-                                <rect key="frame" x="20" y="188" width="59" height="21"/>
+                                <rect key="frame" x="20" y="188" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,9 +151,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-1m-jqk">
                                 <rect key="frame" x="17" y="217" width="240" height="128"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcb-nE-lId">
+                                <rect key="frame" x="20" y="159" width="237" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="E1G-5K-ft4"/>
                     <connections>
                         <outlet property="genderLabel" destination="zcb-nE-lId" id="4jP-Xw-1Dd"/>
                         <outlet property="homeworldLabel" destination="b2c-U5-IqD" id="SLz-Jw-p3q"/>
@@ -125,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1409" y="-895"/>
         </scene>
-        <!--View Controller-->
+        <!--Characters-->
         <scene sceneID="CoD-aH-raz">
             <objects>
-                <viewController id="8hq-xn-Q8O" sceneMemberID="viewController">
+                <viewController id="8hq-xn-Q8O" customClass="SearchResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zZP-xF-e7q"/>
                         <viewControllerLayoutGuide type="bottom" id="Oto-Ep-o26"/>
@@ -141,7 +190,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchResultCell" textLabel="PEa-v4-2nJ" detailTextLabel="elB-Ro-d4Q" style="IBUITableViewCellStyleSubtitle" id="RkW-Im-lJO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="characterCell" textLabel="PEa-v4-2nJ" detailTextLabel="elB-Ro-d4Q" style="IBUITableViewCellStyleSubtitle" id="RkW-Im-lJO">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RkW-Im-lJO" id="3jK-PJ-JBb">
@@ -169,6 +218,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8hq-xn-Q8O" id="0ea-KM-z09"/>
+                                    <outlet property="delegate" destination="8hq-xn-Q8O" id="N9N-8N-dXE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,6 +232,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="I9i-DJ-bkr" secondAttribute="trailing" constant="-20" id="fb9-fn-8GW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Characters" id="3Sp-Lu-Z5O"/>
+                    <connections>
+                        <outlet property="searchResultsTableView" destination="I9i-DJ-bkr" id="tyr-Mt-arr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYf-jS-fHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
