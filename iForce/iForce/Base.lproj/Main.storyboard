@@ -92,9 +92,15 @@
                                     <constraint firstItem="xWb-jF-Nw6" firstAttribute="leading" secondItem="erA-iP-3GJ" secondAttribute="trailing" constant="3" id="xaZ-XP-NJg"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-HX-AgP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-HX-AgP">
                                 <rect key="frame" x="2" y="437" width="596" height="161"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-rf-ase">
+                                <rect key="frame" x="2" y="437" width="596" height="161"/>
+                                <connections>
+                                    <segue destination="cwc-C8-Zwu" kind="show" identifier="segueToTrivia" id="cVN-vm-6gk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -183,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcQ-jh-W5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="315"/>
+            <point key="canvasLocation" x="698" y="342"/>
         </scene>
         <!--Detail-->
         <scene sceneID="0J5-Ev-7eD">
@@ -334,6 +340,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ysH-c6-wBZ"/>
+        <segue reference="23r-2o-ILu"/>
     </inferredMetricsTieBreakers>
 </document>

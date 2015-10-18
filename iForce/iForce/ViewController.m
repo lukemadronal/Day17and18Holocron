@@ -222,6 +222,8 @@ bool serverAvailable;
         CharacterViewController *charController = [segue destinationViewController];
         charController.currentCharacter = _trackMutableArray[0];
         NSLog(@"Sending %@",[charController.currentCharacter objectForKey:@"name"]);
+    } else if ([[segue identifier] isEqualToString:@"segueToTrivia"]) {
+        
     }
     
 }
