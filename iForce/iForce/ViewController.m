@@ -19,6 +19,14 @@
 @property (nonatomic,strong)         NSURL                *currentURL;
 @property (nonatomic,strong)         NSString             *currentURLString;
 @property (nonatomic,strong)         NSString             *hostName;
+@property(nonatomic,strong) IBOutlet UIImageView          *triviaImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *charactersImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *yodaImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *hanSoloImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *padmeImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *lukeSkywalkerImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *darthMaulImage;
+@property(nonatomic,strong) IBOutlet UIImageView          *chewieImage;
 
 @end
 
@@ -221,7 +229,14 @@ bool serverAvailable;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _hyperSpaceImage.image = [UIImage imageNamed:@"hyperspace.jpg"];
-    [_characterSearchBar setBackgroundImage:[UIImage new]];
+    _triviaImage.image = [UIImage imageNamed:@"trivia.jpg"];
+    _charactersImage.image = [UIImage imageNamed:@"characters.jpg"];
+    _yodaImage.image = [UIImage imageNamed:@"Yoda.png"];
+    _darthMaulImage.image = [UIImage imageNamed:@"DarthMaul.png"];
+    _lukeSkywalkerImage.image = [UIImage imageNamed:@"LukeSkywalker.jpg"];
+    _padmeImage.image = [UIImage imageNamed:@"Padme.jpg"];
+    _hanSoloImage.image = [UIImage imageNamed:@"Hansolo.jpg"];
+    _chewieImage.image = [UIImage imageNamed:@"Chewie.jpg"];
     _hostName = @"www.moveablebytes.com";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     hostReach = [Reachability reachabilityWithHostName:_hostName];

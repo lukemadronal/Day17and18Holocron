@@ -45,22 +45,15 @@
     NSString *fileName = [urlPath lastPathComponent];
     
     if ([_appDelegate fileIsLocal:fileName]) {
-        NSLog(@"LOCAAALLLLLLLLLŁ");
-        //characterCell.imageView = [UIImage imageNamed:[[_appDelegate getDocumentsDirectory] stringByAppendingPathComponent:fileName]];
         _imageView.image = [UIImage imageNamed:[[_appDelegate getDocumentsDirectory] stringByAppendingPathComponent:fileName]];
     } else {
-        //NSLog(@"not local %@",fileName);
-        NSLog(@"not local");
         [_appDelegate getImageFromServer:fileName fromUrl:urlString atIndexPath:nil checkTableView:false withTableView:nil];
     }
-   // _imageView.image = [];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotImage) name:@"getImageNotfiation" object:nil];
-    NSLog(@"Recv %@",[_currentCharacter objectForKey:@"name"]);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

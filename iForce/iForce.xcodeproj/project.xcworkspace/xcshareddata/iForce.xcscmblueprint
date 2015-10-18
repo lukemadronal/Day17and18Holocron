@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "644E3F3FB53176CD897C887C8A121A50EA6C0141",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "644E3F3FB53176CD897C887C8A121A50EA6C0141" : 0,
+    "5856798960BA325F0BE3ECB8C577888E983589A1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "82D9E836-178D-462B-9344-B6252178D5B1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "644E3F3FB53176CD897C887C8A121A50EA6C0141" : "Day17and18Holocron\/",
+    "5856798960BA325F0BE3ECB8C577888E983589A1" : "Day11and12-TuneSearch\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iForce",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iForce\/iForce.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lukemadronal\/Day11and12-TuneSearch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5856798960BA325F0BE3ECB8C577888E983589A1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lukemadronal\/Day17and18Holocron.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "644E3F3FB53176CD897C887C8A121A50EA6C0141"
+    }
+  ]
+}
