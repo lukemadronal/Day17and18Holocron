@@ -10,4 +10,6 @@
 
 @interface TriviaViewController : UIViewController
 
+@property (nonatomic,strong) NSDictionary *currentCharacter;
+
 @end

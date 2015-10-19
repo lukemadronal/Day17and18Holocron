@@ -162,29 +162,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your answer here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-xg-8ej">
-                                <rect key="frame" x="20" y="202" width="237" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your answer here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-xg-8ej">
+                                <rect key="frame" x="0.0" y="164" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Trivia question goes here?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-Wc-L32">
-                                <rect key="frame" x="20" y="72" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Trivia question goes here?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-Wc-L32">
+                                <rect key="frame" x="100" y="64" width="400" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm0-nh-hNF">
-                                <rect key="frame" x="20" y="230" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm0-nh-hNF">
+                                <rect key="frame" x="5" y="227" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-3O-c68">
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="BKr-tK-EuX"/>
+                                    <constraint firstAttribute="height" constant="100" id="ygf-Wa-EZh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8L4-Wl-4rh">
+                                <rect key="frame" x="500" y="64" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A23-0j-brS"/>
+                                    <constraint firstAttribute="height" constant="100" id="Zdp-0S-7yu"/>
+                                </constraints>
+                            </imageView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noA-4u-46K">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="ccn-j0-mbs"/>
+                                    <tabBarItem systemItem="more" id="AZU-kj-EdK"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Moh-xg-8ej" firstAttribute="top" secondItem="O5b-3O-c68" secondAttribute="bottom" id="30T-As-sdw"/>
+                            <constraint firstItem="noA-4u-46K" firstAttribute="height" secondItem="5ie-3o-ioD" secondAttribute="height" multiplier="49:600" id="871-xz-YhQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Moh-xg-8ej" secondAttribute="trailing" constant="-20" id="8Zn-Kl-KQ6"/>
+                            <constraint firstItem="noA-4u-46K" firstAttribute="leading" secondItem="5ie-3o-ioD" secondAttribute="leadingMargin" constant="-20" id="8bo-ou-Zgf"/>
+                            <constraint firstItem="Moh-xg-8ej" firstAttribute="height" secondItem="5ie-3o-ioD" secondAttribute="height" multiplier="30:600" id="Djt-Hi-x21"/>
+                            <constraint firstItem="t8K-Wc-L32" firstAttribute="leading" secondItem="O5b-3O-c68" secondAttribute="trailing" id="TOH-iZ-Bpd"/>
+                            <constraint firstItem="YLt-B3-vOk" firstAttribute="top" secondItem="noA-4u-46K" secondAttribute="bottom" id="W14-P2-ns3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8L4-Wl-4rh" secondAttribute="trailing" constant="-20" id="W1Y-EH-g3L"/>
+                            <constraint firstItem="Moh-xg-8ej" firstAttribute="top" secondItem="t8K-Wc-L32" secondAttribute="bottom" id="abk-X6-osq"/>
+                            <constraint firstItem="8L4-Wl-4rh" firstAttribute="leading" secondItem="t8K-Wc-L32" secondAttribute="trailing" id="jvD-0Y-rg2"/>
+                            <constraint firstItem="O5b-3O-c68" firstAttribute="top" secondItem="NjR-ra-eqs" secondAttribute="bottom" id="pkg-iZ-NsW"/>
+                            <constraint firstItem="YLt-B3-vOk" firstAttribute="top" secondItem="Moh-xg-8ej" secondAttribute="bottom" constant="406" id="rHn-oY-AFq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="noA-4u-46K" secondAttribute="trailing" constant="-20" id="wJ0-nR-WUn"/>
+                            <constraint firstItem="Moh-xg-8ej" firstAttribute="leading" secondItem="5ie-3o-ioD" secondAttribute="leadingMargin" constant="-20" id="wJA-rZ-1yQ"/>
+                            <constraint firstItem="t8K-Wc-L32" firstAttribute="top" secondItem="NjR-ra-eqs" secondAttribute="bottom" id="woz-zd-F0a"/>
+                            <constraint firstItem="8L4-Wl-4rh" firstAttribute="top" secondItem="NjR-ra-eqs" secondAttribute="bottom" id="z1S-UF-xa8"/>
+                            <constraint firstItem="O5b-3O-c68" firstAttribute="leading" secondItem="5ie-3o-ioD" secondAttribute="leadingMargin" constant="-20" id="zfV-HP-OeS"/>
+                            <constraint firstItem="Moh-xg-8ej" firstAttribute="top" secondItem="8L4-Wl-4rh" secondAttribute="bottom" id="zv1-7G-cuj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rHn-oY-AFq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="answerTextField" destination="Moh-xg-8ej" id="H2X-OO-yFu"/>
                         <outlet property="questionTextView" destination="t8K-Wc-L32" id="PbH-fh-tNt"/>
                         <outlet property="scoreLabel" destination="Pm0-nh-hNF" id="hEm-zE-yr9"/>
+                        <outlet property="tropperLeftImageView" destination="O5b-3O-c68" id="dVK-zz-15g"/>
+                        <outlet property="tropperRightImageView" destination="8L4-Wl-4rh" id="94j-1D-CPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcQ-jh-W5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
